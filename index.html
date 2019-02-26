@@ -1,20 +1,365 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title> KONTAKT FORMA </title>
-
+  <meta charset="utf-8">
+  <meta name="description" content="Opis strane prema uputstvima i smernicama Webmaster-a">
+  <meta name="keywords" content="Upisati do 10 ključnih reči odvojene zarezom">
+  <meta name="author" content="Upisati ime i prezime autora i mejl adresu">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="css/mojstil.css" rel="stylesheet">
 </head>
-
-<body>
-<form method="post" action="https://formspree.io/nemanjatanovic92@gmail.com">
-Ime i prezime: <input name="ime_i_prezime" type="text"> </input> </br>
-Telefon: <input name="telefon" type="text"> </input> </br>
-E-email: <input name="e-mail" type="email"> </input> </br>
-<button> Po&#353;alji </button>
-
-  </form>
-
-<a href="napredna_forma.html"> napredna forma </a>
-</body>
-
-</html>
+<body onload="Vreme(),citati()">
+  <div class="container"><!-- pocetak omotaca -->
+ 
+    <div class="row"> <!-- pocetak headera -->
+      <div class="col-md-10"> <!-- levi deo headera - logo -->
+        <div class="page-header">
+          <h1><a href="index.html"><img src="img/logo.jpg" alt="..."></a><small>
+          Ime kompanije</small></h1>
+        </div>
+      </div>
+      <br>
+      <div class="col-md-2"> <!-- desni deo headera gde je sat -->
+        <div class="input-group"> <!-- input grup klasa -->
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          </span>
+          <form name="vremeForma"><input type="text" name="cifre" class="form-control"></form>
+        </div>
+      </div>
+    </div>
+    <br>
+    <nav class="navbar navbar-default" data-spy="affix"> <!--afix kontrola za fiksiranje navigacije-->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span><!-- ovo je ikonica glifikon -->
+        Početna strana</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="onama.html">O nama <span class="sr-only">(current)</span></a></li>
+          <li><a href="galerija.html">Galerija</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proizvodi <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Proizvod 1</a></li>
+              <li><a href="#">Proizvod 2</a></li>
+              <li><a href="#">Mapa sajta</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="stampa.html">Strana za štampu</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Polje za unos">
+          </div>
+          <button type="submit" class="btn btn-default">      
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span><!-- ovo je ikonica glifikon -->
+          </button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav><!-- kraj navigacije -->
+ 
+    <div class="row"> <!-- pocetak info i promo boxeva -->
+      <div class="col-md-6"><!-- pocetak levog boxa -->
+        <div class="jumbotron">
+ 
+          <h2>Citati</h2>
+          <blockquote>
+            <p id="citat"></p>
+            <small><cite id="author"></cite></small>
+          </blockquote>
+ 
+          <!-- <h2>Informacije</h2>
+          <p>Ovde napisati najvažnije i najbitnije informacije o kompaniji koje sajt kao celina sadrži...</p>
+          <p><a class="btn btn-danger btn-lg" href="#" role="button">Opširnije &#8649;</a></p> -->
+ 
+        </div>
+      </div><!-- kraj levog boxa -->
+      <div class="col-md-6"><!-- pocetak desnog boxa -->
+       <div class="jumbotron">
+         <h2>Promocije</h2>
+         <p>Ovde napisati najvažnije i najbitnije promocije o kompaniji koje sajt kao celina sadrži...</p>
+         <p><a class="btn btn-danger btn-lg" href="#" role="button">Opširnije &#8649;</a></p>
+       </div>
+     </div><!-- kraj desnog boxa -->
+   </div><!-- kraj info i promo boxeva -->
+ 
+   <form class="prodavnica" id="proizvodi">  <!-- otvaramo formu prodavnice a zatvaramo je pre footera -->
+ 
+     <div class="row"><!-- otvoren red za thumnails -->
+ 
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <h3>Proizvod 1</h3>
+          <img src="img/slika1.jpg" alt="...">
+          <div class="caption">
+            <p>Ovde napisati najvažnije informacije o proizvodu...</p>
+ 
+            <p>Cena:<strong> 10 </strong><span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>
+            <label for="jedan"></label><input type="text" id="jedan" size="3" placeholder="0">
+ 
+            <!-- modal na button klik -->
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg">Pogledajte &rarr;</button>
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div> <!-- kraj modal elementa -->
+ 
+          </div>
+        </div>
+      </div>
+ 
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <h3>Proizvod 2</h3>
+          <!-- tooltip element -->
+          <img data-toggle="tooltip" data-placement="top" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat." src="img/slika1.jpg" alt="...">
+          <div class="caption">
+            <p>Ovde napisati najvažnije informacije o proizvodu...</p>
+ 
+            <p>Cena:<strong> 8 </strong><span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>
+            <label for="dva"></label><input type="text" id="dva" size="3" placeholder="0">
+ 
+            <a href="#" class="btn btn-info" role="button">Pogledajte &rarr;</a> <!-- skinuti p -->
+          </div>
+        </div>
+      </div>
+ 
+      <div class="col-sm-6 col-md-4"> <!-- modal na klik na sliku -->
+        <div class="thumbnail">
+          <h3>Proizvod 3</h3>
+          <img src="img/slika1.jpg" alt="" data-toggle="modal" data-target="#Modal">
+          <div class="caption">
+           <p>Ovde napisati najvažnije informacije o proizvodu...</p>
+ 
+           <p>Cena<strong> 10 </strong><span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>
+           <label for="tri"></label><input type="text" id="tri" size="3" placeholder="0">
+ 
+           <a href="#" class="btn btn-info" role="button">Pogledajte &rarr;</a> <!-- skinuti p -->
+         </div>
+       </div>
+     </div>
+     <!-- Modal -->
+     <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalOkvir" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="ModalOkvir">Opis slike</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam nemo tempore deserunt corporis explicabo
+            expedita? Error, molestiae accusamus sint eveniet placeat perferendis minus. Veniam repudiandae nisi numquam
+            consectetur, debitis hic quaerat, illum distinctio obcaecati soluta tempore totam accusamus eligendi ipsum
+            vel quos placeat quo a. Qui commodi saepe sint illo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Zatvori</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Kraj Modala -->
+  </div><!-- zatvoren red za thumbnails -->
+ 
+  <div class="row"> <!-- otvaramo red za izracunavanje -->
+    <div class="col-md-12"> <!-- pocetak reda md12  -->
+ 
+      <div id="detalji"> <!-- pocetak detalja narudzbenice -->
+        <h2>Detalji narudžbenice:</h2>  
+ 
+        <div class="grad"> <!-- grad -->
+          <label for="s-grad">Izaberite grad za isporuku:</label>
+          <select id="s-grad">
+            <option value="">-- IZABERITE --</option>
+            <option value="BG">Beograd</option>
+            <option value="NS">Novi Sad</option>
+            <option value="DR">Nešto drugo (20% pdv primera radi)</option>
+            <option value="PA">Pančevo</option>
+          </select>
+        </div> <!-- kraj diva grad -->
+ 
+        <div class="grupa metoda"> <!-- nacin isporuke -->
+          <label for="r-metod-preuzimanje">Način isporuke:</label><br>
+          <input type="radio" value="preuzimanje" name="r_method" id="r-metod-preuzimanje" checked><label for="r-metod-preuzimanje">Lično preuzimanje (besplatno)</label><br>
+          <input type="radio" value="kompanijski" name="r_method" id="r-metod-kompanijski"><label for="r-metod-kompanijski">Kompanijski prevoz (2 eura po proizvodu)</label><br>
+          <input type="radio" value="postexpres" name="r_method" id="r-metod-postexpres"><label for="r-metod-postexpres">Post expres (3 eura po proizvodu)</label>
+        </div> <!-- kraj diva nacin isporuke -->
+ 
+        <div class="grupa izracunavanja"> <!-- izracunaj -->
+          <p>
+            <label for="btn-izracunaj">Izračunaj ukupno: </label>
+            <input type="submit" value="Ukupan iznos" id="btn-izracunaj">
+            <input type="text" id="txt-izracunaj" placeholder="0.00 eura">
+          </p>
+          <div id="rezultati"> <!-- rezultat -->
+          </div> <!-- kraj diva rezultat -->
+        </div> <!-- kraj diva izracunaj -->
+      </div> <!-- kraj id detalja -->
+    </div> <!-- kraj reda  md 12 -->
+  </form> <!-- zatvaramo formu prodavnice -->
+ 
+  <footer> <!-- početak footer-a -->
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="page-header">
+          O nama
+        </h4>
+        <div class="caption">
+          <p class="text-justify">
+            Naziv kompanije, kratak opis delatnosti kojom se kompanija bavim, misija, vizija.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ullam praesentium modi dolorum     maxime in magnam delectus error corporis dolore fugiat quam, adipisci officiis natus temporibus inventore! Iusto, totam culpa.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="page-header">
+          Kontakt
+        </h4>
+        <p><i class="fas fa-map-marker" aria-hidden="true"></i> Savski nasip 7, Beograd 11000 </p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> +381 11 201 55 00</p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> info@code.edu.rs</p>
+      </div>
+      <div class="col-md-4">
+        <h4 class="page-header">
+          Pratite nas!
+        </h4>
+        <ul class="list-inline">
+          <li><a href="http://facebook.com/"><i class="fab fa-facebook-f fa-3x"></i></a></li>
+          <li><a href="http://instagram.com/"><i class="fab fa-instagram fa-3x"></i></a></li>
+          <li><a href="http://linkedin.com/"><i class="fab fa-linkedin fa-3x"></i></a></li>
+          <li><a href="http://twitter.com/"><i class="fab fa-twitter-square fa-3x"></i></a></li>
+        </ul>
+      </div>
+    </div> <!-- kraj gornjeg dela footer-a -->
+    <div class="panel-footer"> <!-- donji deo footer-a -->
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-inline">
+            <li><a href="#">O nama</a></li>
+            <li><a href="#">Proizvodi </a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Uslovi koriscenja</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Mapa sajta</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p class="text-right">Copyright &copy; 2019 Aleksandar Simović &#64; CODE</p>
+        </div>
+      </div>
+    </div>  <!-- kraj donjeg dela footer-a -->
+  </footer> <!-- kraj footer sekcije -->
+</div><!-- kraj omotaca -->
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mojjs.js"></script>
+ 
+<script type="text/javascript">  // prodavnica - kalkulacija
+document.getElementById("proizvodi").addEventListener("submit", ukupanIznos);
+ 
+ 
+function ukupanIznos(event) {
+  event.preventDefault();
+ 
+ 
+  if (document.getElementById("s-grad").value === '') {
+    alert("  --  MOLIM VAS DA UNESETE VAŠ GRAD  --  ");
+   
+  }
+ 
+  var kolPrvi = parseInt(document.getElementById("jedan").value, 10) || 0,
+  kolDrugi = parseInt(document.getElementById("dva").value, 10) || 0,  
+  kolTreci = parseInt(document.getElementById("tri").value, 10) || 0,
+  grad = document.getElementById("s-grad").value;
+ 
+  var methods = document.getElementById("proizvodi").r_method,
+  isporukaMetod;
+ 
+  for (var i = 0; i < methods.length; i++) {
+    if (methods[i].checked == true) {
+      isporukaMetod = methods[i].value;  
+    }
+  }
+// za konzolu:
+  // for (var i = 0; i < methods.length; i++) {
+  //   if (methods[i].checked == true) {
+  //     alert(methods[i].value);
+  //   }
+  // }
+ 
+ 
+  //   console.log(kolPrvi);
+  //   console.log(kolDrugi);
+  //   console.log(kolTreci);
+  //   console.log(grad);
+  //   console.log(isporukaMetod);
+  // }
+ 
+  var pdvIznos = 1;
+  if (grad === "DR") {
+    pdvIznos = 1.20; // pdv od 20%
+  }
+ 
+ 
+  var cenaIsporukePo = 0;
+  switch (isporukaMetod) {  
+    case "preuzimanje" :  
+    cenaIsporukePo = 0;
+          break;  // traži dalje
+          case "kompanijski" :
+          cenaIsporukePo = 2;
+          break;
+          case "postexpres" :
+          cenaIsporukePo = 3;
+          break;
+        }
+        var ukupnoProizvoda = kolPrvi + kolDrugi + kolTreci,
+            isporukaCena = ukupnoProizvoda * cenaIsporukePo;
+ 
+        var bezIsporuke = ((kolPrvi * 10) + (kolDrugi * 8) + (kolTreci * 10)) * pdvIznos;
+ 
+        var izracunaj = "eura: " + (bezIsporuke + isporukaCena).toFixed(2);
+ 
+        document.getElementById("txt-izracunaj").value = izracunaj;
+ 
+        document.getElementById("rezultati").innerHTML = "Ukupno proizvoda: " + ukupnoProizvoda + '<br>';
+ 
+        document.getElementById("rezultati").innerHTML += "Cena isporuke: " + isporukaCena.toFixed(2) + '<br>';
+ 
+ 
+        document.getElementById("rezultati").innerHTML += "PDV: " + ((pdvIznos - 1) * 100).toFixed(2) + '%';
+      }
+    </script>  
+  </body>
+  </html>
